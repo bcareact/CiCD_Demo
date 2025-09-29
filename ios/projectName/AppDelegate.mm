@@ -1,6 +1,7 @@
 #import "AppDelegate.h"
 
 #import <React/RCTBundleURLProvider.h>
+#import <RNBootSplash/RNBootSplash.h>
 
 @implementation AppDelegate
 
@@ -9,6 +10,8 @@
   self.moduleName = @"projectName";
   // You can add your custom initial props in the dictionary below.
   // They will be passed down to the ViewController used by React Native.
+    RCTBridge *bridge = [[RCTBridge alloc] initWithDelegate:self launchOptions:launchOptions];
+  [RNBootSplash initWithStoryboard:@"BootSplash" rootView:rootView]; // Add this line
   self.initialProps = @{};
 
   return [super application:application didFinishLaunchingWithOptions:launchOptions];
